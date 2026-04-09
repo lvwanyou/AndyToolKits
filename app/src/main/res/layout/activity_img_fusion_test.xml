@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <com.dianping.video.view.gestureimgview.BlendGestureImageView1
+        android:id="@+id/zoomRotateImg1"
+        android:layout_width="340dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="10dp"
+
+        android:src="@mipmap/ic_launcher" />
+    <!--    android:background="@drawable/border_a"-->
+    
+    <com.dianping.video.view.gestureimgview.BlendGestureImageView2
+        android:id="@+id/zoomRotateImg2"
+        android:layout_width="340dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="300dp"
+        android:src="@mipmap/ic_launcher" />
+    <!--    android:background="@drawable/border_b"-->
+
+    <SeekBar
+        android:id="@+id/intensityBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="620dp" />
+</FrameLayout>

@@ -1,0 +1,52 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        jcenter()
+    }
+
+    ext {
+        localDepend = true
+        compileSdkVersion = 30
+        buildToolsVersion = "30.0.3"
+        minSdkVersion = 21
+        targetSdkVersion = 30
+        ndkVersion = "21.4.7075529"
+        abis = ["armeabi-v7a", "arm64-v8a"]
+        cmakeArgs = ["--no-warn-unused-cli",
+                     "-DANDROID_PLATFORM_LEVEL=21",
+                     "-DANDROID_STL=c++_static"]
+        cppFlags = ["-std=c++11",
+                    "-fno-stack-protector",
+                    "-fno-exceptions",
+                    "-fno-unwind-tables",
+                    "-fno-asynchronous-unwind-tables",
+                    "-fno-rtti",
+                    "-ffast-math",
+                    "-fno-finite-math-only",
+                    "-ffp-contract=fast",
+                    "-fvisibility-inlines-hidden",
+                    "-fvisibility=hidden",
+                    "-fomit-frame-pointer",
+                    "-ffunction-sections",
+
+                    "-fdata-sections",
+                    "-no-canonical-prefixes",
+                    "-Wformat",
+                    "-Werror=format-security",
+                    "-Wno-unused-command-line-argument",
+                    "-Wl,-Bsymbolic-functions",
+                    "-Wl,--hash-style=both",]
+    }
+}

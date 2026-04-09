@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.openglexample">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--    图片主色进行相册读取使用-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <application
+        android:name=".application.MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".activity.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.OpenGLES20Activity" />
+        <activity android:name=".activity.CodecTestActivity" />
+        <activity android:name=".activity.RulerViewTestActivity" />
+        <activity android:name=".activity.ImgTransformTestActivity" />
+        <activity android:name=".activity.CreativeCollectionActivity" />
+        <activity android:name=".activity.VideoViewActivity" />
+        <activity android:name=".activity.BitmapMainColorActivity" />
+        <activity android:name=".activity.ZoomRotateImageTestActivity" />
+        <activity android:name=".activity.ImageFusionTestActivity" />
+        <activity android:name=".activity.ImageFusionTest2Activity" />
+        <activity android:name=".activity.ImageFusionTest3Activity" />
+        <activity android:name=".activity.LiveDataTestActivity" />
+        <activity android:name=".activity.AudioTrackTestActivity" />
+        <activity android:name=".activity.TextureViewES30Activity" />
+        <activity android:name=".activity.MediaCodecSurfaceViewActivity" />
+        <activity android:name=".activity.MediaCodecGLSurfaceViewActivity" />
+        <activity android:name=".activity.MediaCodecGLSurfaceViewWithPhotoActivity" />
+        <activity android:name=".activity.MediaCodecGLSurfaceView2Activity" />
+        <!--        <activity android:name=".activity.template.ck.scan.TestCKCaptureDemoActivity" />-->
+        <!--        <activity android:name=".activity.template.ck.scan.TestCKQRScanActivity" />-->
+        <!--        <activity android:name=".activity.template.ck.TestCKCutSamePreviewActivity" />-->
+        <!--        <activity android:name=".activity.template.ck.TestCKCutSameThumbnailActivity" />-->
+    </application>
+
+</manifest>

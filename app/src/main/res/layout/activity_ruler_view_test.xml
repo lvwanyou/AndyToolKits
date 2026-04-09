@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.MainActivity">
+
+
+    <com.example.openglexample.widget.rulerView.v0.RulerView
+        android:id="@+id/rulerView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:paddingStart="20dp"
+        android:paddingTop="30dp"
+        android:paddingEnd="20dp" />
+
+    <com.example.openglexample.widget.rulerView.v1.HorizontalProgressWheelView
+        android:id="@+id/wheelView"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/rulerView"
+        android:background="@color/black"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Your height is 0.0 meters"
+            android:textSize="16sp" />
+
+<!--        <com.example.openglexample.widget.rulerView.v2.RulerView-->
+<!--            android:id="@+id/height_ruler"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@android:color/darker_gray"-->
+<!--            app:rulerColor="@color/green"-->
+<!--            app:rulerDivideByFiveHeight="40dp"-->
+<!--            app:rulerDivideByFiveWidth="4dp"-->
+<!--            app:rulerDivideByTenHeight="50dp"-->
+<!--            app:rulerDivideByTenWidth="6dp"-->
+<!--            app:rulerHighlightColor="#f00"-->
+<!--            app:rulerIntervalDistance="10dp"-->
+<!--            app:rulerIntervalValue="0.1"-->
+<!--            app:rulerIsDivideByFive="true"-->
+<!--            app:rulerIsDivideByTen="true"-->
+<!--            app:rulerLineHeight="30dp"-->
+<!--            app:rulerLineWidth="2dp"-->
+<!--            app:rulerMaxValue="40"-->
+<!--            app:rulerMinValue="0"-->
+<!--            app:rulerOrientation="horizontal"-->
+<!--            app:rulerRetainLength="1"-->
+<!--            app:rulerTextBaseLineDistance="5dp"-->
+<!--            app:rulerTextColor="@android:color/black"-->
+<!--            app:rulerTextSize="20sp" />-->
+
+        <TextView
+            android:id="@+id/text_real"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="Your height is 0.0 meters"
+            android:textSize="16sp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="24dp"
+            android:background="@color/black">
+
+            <com.example.openglexample.widget.rulerView.v2.RulerViewReal
+                android:id="@+id/height_ruler_real"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/darker_gray" />
+
+            <View
+                android:layout_width="2dp"
+                android:layout_height="16dp"
+                android:layout_centerInParent="true"
+                android:background="#FFFFFFFF" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/curValue_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="20"
+            android:textColor="#ff0989"
+            android:textSize="20sp" />
+
+        <com.example.openglexample.widget.rulerView.v3.RulerWheel
+            android:id="@+id/ruler_view"
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            app:MaxBarSize="2dp"
+            app:MidBarSize="1.5dp"
+            app:MinBarSize="1dp"
+            app:lineColorMax="#797979"
+            app:lineColorMid="#797979"
+            app:lineColorMin="#797979"
+            app:line_divider="10dp"
+            app:mask_bg="@mipmap/icon_arrow"
+            app:max_value="100"
+            app:min_value="0"
+            app:mode="SCALE"
+            app:scaleWidth="1dp"
+            app:showGradient="true"
+            app:showScaleValue="true"
+            app:text_Size="30"
+            app:text_color="#e21d6f" />
+
+    </LinearLayout>
+
+</LinearLayout>

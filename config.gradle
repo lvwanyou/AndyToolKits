@@ -1,0 +1,39 @@
+def nativeConfig = rootProject.extensions.getByName("ext")
+if (!nativeConfig.properties.containsKey("cmakeArgs")) {
+    nativeConfig.putAt("cmakeArgs", [
+            "--no-warn-unused-cli",
+            "-DANDROID_PLATFORM_LEVEL=21",
+            "-DANDROID_STL=c++_static"
+    ])
+}
+if (!nativeConfig.properties.containsKey("cppFlags")) {
+    nativeConfig.putAt("cppFlags", [
+            "-std=c++11",
+            "-fno-stack-protector",
+            "-fno-exceptions",
+            "-fno-unwind-tables",
+            "-fno-asynchronous-unwind-tables",
+            "-fno-rtti",
+            "-ffast-math",
+            "-fno-finite-math-only",
+            "-ffp-contract=fast",
+            "-fvisibility-inlines-hidden",
+            "-fvisibility=hidden",
+            "-fomit-frame-pointer",
+            "-ffunction-sections",
+            "-fdata-sections",
+            "-no-canonical-prefixes",
+            "-Wformat",
+            "-Werror=format-security",
+            "-Wno-unused-command-line-argument",
+            "-Wl,-Bsymbolic-functions",
+            "-Wl,--hash-style=both",
+    ])
+}
+if (!nativeConfig.properties.containsKey("abis")) {
+    nativeConfig.putAt("abis", ["armeabi-v7a", "arm64-v8a"])
+}
+
+if (!nativeConfig.properties.containsKey("localDepend")) {
+    nativeConfig.putAt("localDepend", false)
+}

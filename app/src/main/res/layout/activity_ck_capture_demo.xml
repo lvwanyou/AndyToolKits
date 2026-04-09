@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    <com.dianping.video.template.CutSameTemplateVideoPreview-->
+<!--        android:id="@+id/test_ck_surfaceview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/test_ck_mask_click"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+<!--    <android.support.v7.widget.AppCompatSeekBar-->
+<!--        android:id="@+id/test_ck_seekbar"-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="20dp"-->
+<!--        android:layout_gravity="bottom|center"-->
+<!--        android:layout_marginBottom="10dp" />-->
+
+
+<!--    <RelativeLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/rl1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/test_ck_select_media"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="选择素材" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/test_ck_prepare_source"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="预览" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/test_ck_export"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_gravity="center|top"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="导出" />-->
+
+<!--            <Button-->
+<!--                android:id="@+id/test_ck_get_frame"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_gravity="right"-->
+<!--                android:layout_weight="1"-->
+<!--                android:text="抽帧" />-->
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/rl2"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/rl1">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/test_ck_select_pic_media"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="低版本选择图片/视频" />-->
+
+<!--        </LinearLayout>-->
+
+<!--    </RelativeLayout>-->
+
+</FrameLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/decode_720"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="创建解码器" />
+
+    <Button
+        android:id="@+id/decode_1080"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/decode_720"
+        android:text="创建 1080p 解码器" />
+
+    <Button
+        android:id="@+id/encode_720"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/decode_720"
+        android:layout_marginTop="10dp"
+        android:text="创建编码器" />
+
+    <Button
+        android:id="@+id/encode_1080"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/decode_1080"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/encode_720"
+        android:text="创建 1080p 编码器" />
+
+</RelativeLayout>

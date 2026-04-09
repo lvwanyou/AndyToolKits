@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    <com.dianping.video.template.CutSameTemplateVideoPreview-->
+<!--        android:id="@+id/test_ck_surfaceview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent" />-->
+
+    <ImageView
+        android:id="@+id/test_ck_mask_click"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <android.support.v7.widget.AppCompatSeekBar
+        android:id="@+id/test_ck_seekbar"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="10dp" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/test_ck_template1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:text="模版1(type=0)" />
+
+            <Button
+                android:id="@+id/test_ck_template2"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:text="模版2(type=1)" />
+
+            <Button
+                android:id="@+id/test_ck_template3"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:text="模版3(type=1)" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl1">
+
+            <Button
+                android:id="@+id/test_ck_prepare_source"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:text="预下载" />
+
+            <Button
+                android:id="@+id/test_ck_export"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center|top"
+                android:text="导出" />
+
+            <Button
+                android:id="@+id/test_ck_get_frame"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="right"
+                android:text="抽帧控件" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl2">
+
+            <Button
+                android:id="@+id/test_ck_update_media"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:text="更换视频" />
+
+            <Button
+                android:id="@+id/test_ck_update_text"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center|top"
+                android:text="更新文字" />
+
+            <Button
+                android:id="@+id/test_ck_set_volume"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:text="设置音量" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl3">
+
+            <Button
+                android:id="@+id/test_ck_space_crop"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignParentStart="true"
+                android:text="区域裁剪" />
+
+            <Button
+                android:id="@+id/test_ck_next"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:text="下一步" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl4">
+
+            <Button
+                android:id="@+id/test_ck_ddd"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="资源下载ddd" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</FrameLayout>

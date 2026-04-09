@@ -1,0 +1,4 @@
+rootProject.name = "OpenGLexample"
+
+include ':app'
+//include ':peacock-ck'
