@@ -1,4 +1,4 @@
-package com.example.openglexample.activity
+package com.example.openglexample.activity.sub
 
 import android.app.Activity
 import android.net.Uri

@@ -1,4 +1,4 @@
-package com.example.openglexample.activity
+package com.example.openglexample.activity.sub
 
 import android.content.Intent
 import android.graphics.Bitmap
@@ -16,43 +16,37 @@ import android.support.v7.app.AppCompatActivity
 import android.text.TextUtils
 import android.widget.SeekBar
 import android.widget.SeekBar.OnSeekBarChangeListener
-import com.dianping.video.view.gestureimgview.BlendGestureImageView3
-import com.dianping.video.view.gestureimgview.BlendGestureImageView5
-import com.dianping.video.view.gestureimgview.BlendGestureImageView6
+import com.dianping.video.view.gestureimgview.BlendGestureImageView1
+import com.dianping.video.view.gestureimgview.BlendGestureImageView2
 import com.dianping.video.view.gestureimgview.DPTransformImageView
 import com.example.openglexample.R
 import com.example.openglexample.utils.PictUtils
 
 
-class ImageFusionTest3Activity : AppCompatActivity() {
+class ImageFusionTestActivity : AppCompatActivity() {
     companion object {
         const val REQUEST_CODE_GALLERY: Int = 1
-        const val MAX_SEEK_VALUE: Int = 200
     }
 
-    private lateinit var img1: BlendGestureImageView3
-    private lateinit var img2: BlendGestureImageView5
-    private lateinit var img3: BlendGestureImageView6
+    private lateinit var img1: BlendGestureImageView1
+    private lateinit var img2: BlendGestureImageView2
     private lateinit var seekBar: SeekBar
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_img_fusion_test3)
+        setContentView(R.layout.activity_img_fusion_test)
         initViews()
         openGallery()
     }
 
     private fun initViews() {
-        img1 = findViewById<BlendGestureImageView3>(R.id.zoomRotateImg1)
-        img2 = findViewById<BlendGestureImageView5>(R.id.zoomRotateImg2)
-        img3 = findViewById<BlendGestureImageView6>(R.id.zoomRotateImg3)
+        img1 = findViewById<BlendGestureImageView1>(R.id.zoomRotateImg1)
+        img2 = findViewById<BlendGestureImageView2>(R.id.zoomRotateImg2)
         seekBar = findViewById<SeekBar>(R.id.intensityBar)
-        seekBar.max = MAX_SEEK_VALUE
         seekBar.setOnSeekBarChangeListener(object : OnSeekBarChangeListener {
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 img1.blendIntensity = progress
                 img2.blendIntensity = progress
-                img3.blendIntensity = progress
             }
 
             override fun onStartTrackingTouch(seekBar: SeekBar?) {
@@ -90,7 +84,6 @@ class ImageFusionTest3Activity : AppCompatActivity() {
 
                     setUriForDPGestureImageView(img1, images[0])
                     setUriForDPGestureImageView(img2, images[1])
-                    setUriForDPGestureImageView(img3, images[2])
                 }
             } else if (data.data != null) {
                 // 单选图片
@@ -131,7 +124,7 @@ class ImageFusionTest3Activity : AppCompatActivity() {
         paint.isAntiAlias = true
         paint.setXfermode(PorterDuffXfermode(PorterDuff.Mode.DST_IN))
 
-        val edgeWidth = 8f
+        val edgeWidth = 30f
 
         // 上下渐变
         //intArrayOf(0x00FFFFFF, 0x),

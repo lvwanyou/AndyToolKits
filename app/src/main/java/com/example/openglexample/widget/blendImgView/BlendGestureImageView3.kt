@@ -23,8 +23,7 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import kotlin.math.abs
 import kotlin.math.round
 import kotlin.math.roundToInt
-import com.dianping.video.view.gestureimgview.DPTransformImageView
-import com.example.openglexample.activity.ImageFusionTest3Activity.Companion.MAX_SEEK_VALUE
+import com.example.openglexample.activity.sub.ImageFusionTest3Activity.Companion.MAX_SEEK_VALUE
 
 /**
  * 自定义手势操作图片视图类，继承自TransformDPImageView。

@@ -13,10 +13,6 @@ import android.graphics.PorterDuffXfermode
 import android.graphics.RectF
 import android.graphics.Shader
 import android.os.Vibrator
-import android.renderscript.Allocation
-import android.renderscript.Element
-import android.renderscript.RenderScript
-import android.renderscript.ScriptIntrinsicBlur
 import android.util.AttributeSet
 import android.view.GestureDetector
 import android.view.GestureDetector.SimpleOnGestureListener
@@ -25,7 +21,7 @@ import android.view.ScaleGestureDetector
 import android.view.ScaleGestureDetector.SimpleOnScaleGestureListener
 import android.view.ViewGroup
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
-import com.example.openglexample.activity.ImageFusionTest3Activity.Companion.MAX_SEEK_VALUE
+import com.example.openglexample.activity.sub.ImageFusionTest3Activity.Companion.MAX_SEEK_VALUE
 import kotlin.math.abs
 import kotlin.math.round
 import kotlin.math.roundToInt

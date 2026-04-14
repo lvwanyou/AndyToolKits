@@ -1,4 +1,4 @@
-package com.example.openglexample.activity
+package com.example.openglexample.activity.sub
 
 import android.Manifest
 import android.app.Activity
@@ -27,11 +27,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import com.example.openglexample.R
+import com.example.openglexample.utils.ColorCutQuantizer
 import com.example.openglexample.utils.PictUtils
 import java.io.IOException
 import java.util.Random
 import java.util.concurrent.Executors
 import java.util.concurrent.Future
+import kotlin.collections.iterator
 import kotlin.concurrent.thread
 
 
@@ -247,7 +249,7 @@ class BitmapMainColorActivity : Activity(), View.OnClickListener {
                 getDominantColorBykMeansParallel(downSampleBitmap)
             }
             startNamedThread(SELF_PALETTE_ALGORITHM) {
-                val dominantColor = com.example.openglexample.utils.ColorCutQuantizer(downSampleBitmap).getDominantColor(Color.TRANSPARENT)
+                val dominantColor = ColorCutQuantizer(downSampleBitmap).getDominantColor(Color.TRANSPARENT)
                 // 使用主色 (dominantColor)
                 val msg: Message = mHandler.obtainMessage(MSG_SET_COLOR)
                 msg.obj = Pair(SELF_PALETTE_ALGORITHM, dominantColor)

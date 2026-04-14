@@ -1,11 +1,10 @@
-package com.example.openglexample.activity
+package com.example.openglexample.activity.sub
 
 import android.media.MediaCodec
 import android.media.MediaCodecInfo
 import android.media.MediaCodecList
 import android.media.MediaFormat
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import com.example.openglexample.R

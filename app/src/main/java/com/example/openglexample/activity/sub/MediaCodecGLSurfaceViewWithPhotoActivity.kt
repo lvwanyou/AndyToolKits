@@ -1,5 +1,6 @@
-package com.example.openglexample.activity
+package com.example.openglexample.activity.sub
 
+import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.opengl.GLES20
 import android.opengl.GLSurfaceView
@@ -9,8 +10,6 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.openglexample.R
-import com.example.openglexample.widget.CaptureViewAnimator
-import com.example.openglexample.widget.CaptureViewAnimator1
 import com.example.openglexample.widget.CaptureViewAnimator2
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
@@ -196,7 +195,7 @@ class MediaCodecGLSurfaceViewWithPhotoActivity : AppCompatActivity() {
             return textureHandle[0]
         }
 
-        private fun bitmapToByteArray(bitmap: android.graphics.Bitmap): ByteArray {
+        private fun bitmapToByteArray(bitmap: Bitmap): ByteArray {
             val byteBuffer = ByteBuffer.allocate(bitmap.byteCount)
             bitmap.copyPixelsToBuffer(byteBuffer)
             return byteBuffer.array()

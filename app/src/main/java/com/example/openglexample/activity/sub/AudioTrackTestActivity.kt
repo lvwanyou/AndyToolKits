@@ -1,4 +1,4 @@
-package com.example.openglexample.activity
+package com.example.openglexample.activity.sub
 
 import android.media.AudioFormat
 import android.media.AudioManager
@@ -6,7 +6,6 @@ import android.media.AudioTrack
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
-import android.widget.TextView
 import com.example.openglexample.R
 import com.example.openglexample.model.AudioConfigInfo
 

@@ -1,13 +1,11 @@
-package com.example.openglexample.activity
+package com.example.openglexample.activity.sub
 
-import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.support.annotation.NonNull
 import android.support.v7.app.AppCompatActivity
 import android.widget.Button
 import android.widget.TextView

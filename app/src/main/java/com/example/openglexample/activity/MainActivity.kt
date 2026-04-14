@@ -13,6 +13,24 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import com.example.openglexample.R
+import com.example.openglexample.activity.sub.AudioTrackTestActivity
+import com.example.openglexample.activity.sub.BitmapMainColorActivity
+import com.example.openglexample.activity.sub.CodecTestActivity
+import com.example.openglexample.activity.sub.CreativeCollectionActivity
+import com.example.openglexample.activity.sub.ImageFusionTest2Activity
+import com.example.openglexample.activity.sub.ImageFusionTest3Activity
+import com.example.openglexample.activity.sub.ImageFusionTestActivity
+import com.example.openglexample.activity.sub.ImgTransformTestActivity
+import com.example.openglexample.activity.sub.LiveDataTestActivity
+import com.example.openglexample.activity.sub.MediaCodecGLSurfaceView2Activity
+import com.example.openglexample.activity.sub.MediaCodecGLSurfaceViewActivity
+import com.example.openglexample.activity.sub.MediaCodecGLSurfaceViewWithPhotoActivity
+import com.example.openglexample.activity.sub.MediaCodecSurfaceViewActivity
+import com.example.openglexample.activity.sub.OpenGLES20Activity
+import com.example.openglexample.activity.sub.RulerViewTestActivity
+import com.example.openglexample.activity.sub.TextureViewES30Activity
+import com.example.openglexample.activity.sub.VideoViewActivity
+import com.example.openglexample.activity.sub.ZoomRotateImageTestActivity
 import com.example.openglexample.bean.Menu
 import com.example.openglexample.widget.adapter.MenuAdapter
 

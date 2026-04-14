@@ -1,15 +1,12 @@
-package com.example.openglexample.activity
+package com.example.openglexample.activity.sub
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import com.example.openglexample.R
-import com.example.openglexample.widget.rulerView.v2.RulerView
 import com.example.openglexample.widget.rulerView.v2.RulerViewReal
 import com.example.openglexample.widget.rulerView.v3.RulerWheel
-import org.jetbrains.annotations.Nullable
 
 class RulerViewTestActivity : AppCompatActivity(), RulerViewReal.OnValueChangeListener {
     private var mTextView: TextView? = null
