@@ -51,11 +51,9 @@ class MainActivity : AppCompatActivity() {
      */
     private external fun stringFromJNI(): String
 
-    private val SPLASH_DELAY: Long = 800 // 启动页显示时间（毫秒）
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // 先不设置布局，让主题的 windowBackground (bg_splash) 显示
+        setContentView(R.layout.activity_main)
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), READ_REQUEST_PERMISSION)
@@ -64,12 +62,7 @@ class MainActivity : AppCompatActivity() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), WRITE_REQUEST_PERMISSION)
         }
-
-        // 延时后再设置主布局
-        window.decorView.postDelayed({
-            setContentView(R.layout.activity_main)
-            initViews()
-        }, SPLASH_DELAY)
+        initViews()
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String?>, grantResults: IntArray) {
@@ -115,15 +108,15 @@ class MainActivity : AppCompatActivity() {
         menuList.add(Menu("图片旋转缩放手势操作", R.drawable.ic_launcher_background, {
             startActivity(Intent(this, ZoomRotateImageTestActivity::class.java))
         }))
-        menuList.add(Menu("图片融合示例", R.drawable.ic_launcher_background, {
+
+        menuList.add(Menu("图片融合示例", R.drawable.ic_launcher_background, null, hashMapOf(Pair("图片融合示例1") { _: View? ->
             startActivity(Intent(this, ImageFusionTestActivity::class.java))
-        }))
-        menuList.add(Menu("图片融合示例2", R.drawable.ic_launcher_background, {
+        }, Pair("图片融合示例2") { _: View? ->
             startActivity(Intent(this, ImageFusionTest2Activity::class.java))
-        }))
-        menuList.add(Menu("图片融合示例3", R.drawable.ic_launcher_background, {
+        }, Pair("图片融合示例3") { _: View? ->
             startActivity(Intent(this, ImageFusionTest3Activity::class.java))
-        }))
+        })))
+
         menuList.add(Menu("liveData 示例", R.drawable.ic_launcher_background, {
             startActivity(Intent(this, LiveDataTestActivity::class.java))
         }))
@@ -133,18 +126,16 @@ class MainActivity : AppCompatActivity() {
         menuList.add(Menu("TextureViewES30Activity 示例", R.drawable.ic_launcher_background, {
             startActivity(Intent(this, TextureViewES30Activity::class.java))
         }))
-        menuList.add(Menu("mediaCodec surfaceView 解码示例", R.drawable.ic_launcher_background, {
+
+        menuList.add(Menu("mediaCodec 解码示例", R.drawable.ic_launcher_background, null, hashMapOf(Pair("mediaCodec surfaceView 解码示例") { _: View? ->
             startActivity(Intent(this, MediaCodecSurfaceViewActivity::class.java))
-        }))
-        menuList.add(Menu("mediaCodec GLSurfaceView 解码示例", R.drawable.ic_launcher_background, {
+        }, Pair("mediaCodec GLSurfaceView 解码示例") { _: View? ->
             startActivity(Intent(this, MediaCodecGLSurfaceViewActivity::class.java))
-        }))
-        menuList.add(Menu("mediaCodec GLSurfaceView photo 解码示例", R.drawable.ic_launcher_background, {
+        }, Pair("mediaCodec GLSurfaceView photo 解码示例") { _: View? ->
             startActivity(Intent(this, MediaCodecGLSurfaceViewWithPhotoActivity::class.java))
-        }))
-        menuList.add(Menu("mediaCodec GLSurfaceView2 解码示例", R.drawable.ic_launcher_background, {
+        }, Pair("mediaCodec GLSurfaceView2 解码示例") { _: View? ->
             startActivity(Intent(this, MediaCodecGLSurfaceView2Activity::class.java))
-        }))
+        })))
 
         return menuList
     }

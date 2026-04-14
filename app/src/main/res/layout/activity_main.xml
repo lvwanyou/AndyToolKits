@@ -11,7 +11,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
         android:padding="20dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
         tools:text="Hello World!" />
 
     <android.support.v7.widget.RecyclerView
