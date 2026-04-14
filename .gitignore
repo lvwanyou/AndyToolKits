@@ -6,7 +6,7 @@
 ._*
 
 # Custom folder icons
-Icon
+Icon
 
 # Volume root files
 .DocumentRevisions-V100
@@ -155,8 +155,13 @@ replay_pid*
 hs_err_pid*
 replay_pid*
 
-# Gradle
+### Claude Code
+# Local configuration files
+.claude/settings.local.json
+
+### Gradle
 .gradle/
+build/
 build/
 
 # Maven

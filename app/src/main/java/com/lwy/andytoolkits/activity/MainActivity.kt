@@ -51,9 +51,11 @@ class MainActivity : AppCompatActivity() {
      */
     private external fun stringFromJNI(): String
 
+    private val SPLASH_DELAY: Long = 800 // 启动页显示时间（毫秒）
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        // 先不设置布局，让主题的 windowBackground (bg_splash) 显示
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE), READ_REQUEST_PERMISSION)
@@ -62,7 +64,12 @@ class MainActivity : AppCompatActivity() {
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE), WRITE_REQUEST_PERMISSION)
         }
-        initViews()
+
+        // 延时后再设置主布局
+        window.decorView.postDelayed({
+            setContentView(R.layout.activity_main)
+            initViews()
+        }, SPLASH_DELAY)
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String?>, grantResults: IntArray) {
