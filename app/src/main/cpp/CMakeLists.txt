@@ -7,12 +7,12 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 # Declares and names the project.
-project(openglexample)
-get_filename_component(OPENGLEXAMPLE_SRC_DIR
+project(andytoolkits-lib)
+get_filename_component(ANDYTOOLKITS_SRC_DIR
         ${CMAKE_CURRENT_SOURCE_DIR}
         ABSOLUTE)
 include_directories(
-        ${OPENGLEXAMPLE_SRC_DIR}/include
+        ${ANDYTOOLKITS_SRC_DIR}/include
 )
 
 # Creates and names a library, sets it as either STATIC
@@ -27,7 +27,7 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        ${OPENGLEXAMPLE_SRC_DIR}/opengl-test1-lib.cpp)
+        ${ANDYTOOLKITS_SRC_DIR}/opengl-test1-lib.cpp)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -47,8 +47,8 @@ find_library( # Sets the name of the path variable.
 # build script, prebuilt third-party libraries, or system libraries.
 
 file(GLOB PEACOCK_SRCS
-        ${OPENGLEXAMPLE_SRC_DIR}/*.cpp
-        ${OPENGLEXAMPLE_SRC_DIR}/include/*.h
+        ${ANDYTOOLKITS_SRC_DIR}/*.cpp
+        ${ANDYTOOLKITS_SRC_DIR}/include/*.h
         )
 add_library(
         ${PROJECT_NAME}

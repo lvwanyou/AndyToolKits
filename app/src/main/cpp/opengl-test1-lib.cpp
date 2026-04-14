@@ -25,7 +25,7 @@
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_example_openglexample_activity_MainActivity_stringFromJNI(
+Java_com_lwy_andytoolkits_activity_MainActivity_stringFromJNI(
         JNIEnv *env,
         jobject /* this */) {
     std::string hello = "Hello from C++ by Wanyou Lv";
