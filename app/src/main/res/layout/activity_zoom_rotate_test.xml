@@ -5,7 +5,7 @@
     android:gravity="center"
     android:orientation="vertical">
 
-    <com.example.openglexample.widget.zoomImgView.GestureDPImageView
+    <com.lwy.andytoolkits.widget.zoomImgView.GestureDPImageView
         android:id="@+id/zoomRotateImg1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -13,7 +13,7 @@
         android:scaleType="centerInside"
         android:src="@mipmap/ic_launcher" />
 
-    <com.example.openglexample.widget.zoomImgView.GestureDPImageView
+    <com.lwy.andytoolkits.widget.zoomImgView.GestureDPImageView
         android:id="@+id/zoomRotateImg2"
         android:layout_width="match_parent"
         android:layout_height="0dp"

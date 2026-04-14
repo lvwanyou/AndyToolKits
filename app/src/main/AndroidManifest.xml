@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.openglexample">
+    package="com.lwy.andytoolkits">
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -9,7 +9,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
-        android:name=".application.MainApplication"
+        android:name="com.lwy.andytoolkits.application.MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -17,7 +17,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.lwy.andytoolkits.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,24 +25,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.sub.OpenGLES20Activity" />
-        <activity android:name=".activity.sub.CodecTestActivity" />
-        <activity android:name=".activity.sub.RulerViewTestActivity" />
-        <activity android:name=".activity.sub.ImgTransformTestActivity" />
-        <activity android:name=".activity.sub.CreativeCollectionActivity" />
-        <activity android:name=".activity.sub.VideoViewActivity" />
-        <activity android:name=".activity.sub.BitmapMainColorActivity" />
-        <activity android:name=".activity.sub.ZoomRotateImageTestActivity" />
-        <activity android:name=".activity.sub.ImageFusionTestActivity" />
-        <activity android:name=".activity.sub.ImageFusionTest2Activity" />
-        <activity android:name=".activity.sub.ImageFusionTest3Activity" />
-        <activity android:name=".activity.sub.LiveDataTestActivity" />
-        <activity android:name=".activity.sub.AudioTrackTestActivity" />
-        <activity android:name=".activity.sub.TextureViewES30Activity" />
-        <activity android:name=".activity.sub.MediaCodecSurfaceViewActivity" />
-        <activity android:name=".activity.sub.MediaCodecGLSurfaceViewActivity" />
-        <activity android:name=".activity.sub.MediaCodecGLSurfaceViewWithPhotoActivity" />
-        <activity android:name=".activity.sub.MediaCodecGLSurfaceView2Activity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.OpenGLES20Activity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.CodecTestActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.RulerViewTestActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.ImgTransformTestActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.CreativeCollectionActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.VideoViewActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.BitmapMainColorActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.ZoomRotateImageTestActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.ImageFusionTestActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.ImageFusionTest2Activity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.ImageFusionTest3Activity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.LiveDataTestActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.AudioTrackTestActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.TextureViewES30Activity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.MediaCodecSurfaceViewActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.MediaCodecGLSurfaceViewActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.MediaCodecGLSurfaceViewWithPhotoActivity" />
+        <activity android:name="com.lwy.andytoolkits.activity.sub.MediaCodecGLSurfaceView2Activity" />
         <!--        <activity android:name=".activity.template.ck.scan.TestCKCaptureDemoActivity" />-->
         <!--        <activity android:name=".activity.template.ck.scan.TestCKQRScanActivity" />-->
         <!--        <activity android:name=".activity.template.ck.TestCKCutSamePreviewActivity" />-->

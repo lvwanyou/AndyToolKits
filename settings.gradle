@@ -1,4 +1,4 @@
-rootProject.name = "OpenGLexample"
+rootProject.name = "AndyToolKits"
 
 include ':app'
 //include ':peacock-ck'

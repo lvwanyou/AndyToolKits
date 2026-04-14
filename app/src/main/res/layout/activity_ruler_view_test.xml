@@ -8,7 +8,7 @@
     tools:context=".activity.MainActivity">
 
 
-    <com.example.openglexample.widget.rulerView.v0.RulerView
+    <com.lwy.andytoolkits.widget.rulerView.v0.RulerView
         android:id="@+id/rulerView"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -16,7 +16,7 @@
         android:paddingTop="30dp"
         android:paddingEnd="20dp" />
 
-    <com.example.openglexample.widget.rulerView.v1.HorizontalProgressWheelView
+    <com.lwy.andytoolkits.widget.rulerView.v1.HorizontalProgressWheelView
         android:id="@+id/wheelView"
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -84,7 +84,7 @@
             android:layout_marginEnd="24dp"
             android:background="@color/black">
 
-            <com.example.openglexample.widget.rulerView.v2.RulerViewReal
+            <com.lwy.andytoolkits.widget.rulerView.v2.RulerViewReal
                 android:id="@+id/height_ruler_real"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -107,7 +107,7 @@
             android:textColor="#ff0989"
             android:textSize="20sp" />
 
-        <com.example.openglexample.widget.rulerView.v3.RulerWheel
+        <com.lwy.andytoolkits.widget.rulerView.v3.RulerWheel
             android:id="@+id/ruler_view"
             android:layout_width="match_parent"
             android:layout_height="130dp"
