@@ -3,7 +3,18 @@
     "allow": [
       "Bash(./gradlew clean:*)",
       "Bash(./gradlew :app:assembleDebug:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(git add:*)",
+      "Bash(git reset:*)",
+      "Bash(git checkout:*)",
+      "Bash(ls:*)",
+      "Bash(git log:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)"
+    ],
+    "deny": [],
+    "ask": [
+      "Bash(git push:*)"
     ]
   }
 }

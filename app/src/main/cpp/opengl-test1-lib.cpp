@@ -28,6 +28,6 @@ JNIEXPORT jstring JNICALL
 Java_com_lwy_andytoolkits_activity_MainActivity_stringFromJNI(
         JNIEnv *env,
         jobject /* this */) {
-    std::string hello = "Hello from C++ by Wanyou Lv";
+    std::string hello = "Hello from JNI C++ by Wanyou Lv";
     return env->NewStringUTF(hello.c_str());
 }
