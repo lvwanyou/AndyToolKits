@@ -10,11 +10,10 @@
       "Bash(ls:*)",
       "Bash(git log:*)",
       "Bash(git commit -m ':*)",
-      "Bash(git push:*)"
-    ],
-    "deny": [],
-    "ask": [
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(sed -i '' '/app:alignItems/d' /Users/bytedance/WorkSpace/AndyToolKits/app/src/main/res/layout/main_menu_item.xml)",
+      "Bash(sed -i '' '/app:flexWrap/d' /Users/bytedance/WorkSpace/AndyToolKits/app/src/main/res/layout/main_menu_item.xml)",
+      "Bash(sed -i '' '/app:justifyContent/d' /Users/bytedance/WorkSpace/AndyToolKits/app/src/main/res/layout/main_menu_item.xml)"
     ]
   }
 }

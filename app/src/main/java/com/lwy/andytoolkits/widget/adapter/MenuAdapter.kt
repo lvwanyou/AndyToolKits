@@ -22,57 +22,58 @@ import com.lwy.andytoolkits.bean.Menu
 
 class MenuAdapter(private val menuList: MutableList<Menu>) : RecyclerView.Adapter<MenuAdapter.ViewHolder>() {
     private var subMenuLayoutHeight: Int = 0
-    private lateinit var appearAlphaAnimator: AnimatorSet
-    private lateinit var disappearAlphaAnimator: AnimatorSet
 
-    private fun initAppearAlphaAnimator(holder: ViewHolder) {
+    private fun createExpandAnimation(holder: ViewHolder, targetHeight: Int): AnimatorSet {
         // 创建一个从0到height的动画
-        val heightAnimator = ValueAnimator.ofInt(0, subMenuLayoutHeight)
+        val heightAnimator = ValueAnimator.ofInt(0, targetHeight)
         heightAnimator.addUpdateListener { animation ->
-            // 在动画过程中，更新subItemsLayout的高度
-            val currentHeight = animation.animatedValue as Int
-            val params = holder.subItemsLayout.layoutParams
-            params.height = currentHeight
-            holder.subItemsLayout.layoutParams = params
+            holder.subItemsLayout.layoutParams.height = animation.animatedValue as Int
+            holder.subItemsLayout.requestLayout()
         }
         // 创建一个alpha动画
         val alphaAnimator = ObjectAnimator.ofFloat(holder.subItemsLayout, "alpha", 0f, 1f)
 
         // 使用AnimatorSet同时执行这两个动画
-        appearAlphaAnimator = AnimatorSet()
-        appearAlphaAnimator.duration = 300
-        appearAlphaAnimator.playTogether(heightAnimator, alphaAnimator)
-        appearAlphaAnimator.addListener(object : AnimatorListenerAdapter() {
+        val animatorSet = AnimatorSet()
+        animatorSet.duration = 300
+        animatorSet.playTogether(heightAnimator, alphaAnimator)
+        animatorSet.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationStart(animation: Animator?) {
                 super.onAnimationStart(animation)
                 holder.subItemsLayout.visibility = View.VISIBLE
             }
+
+            override fun onAnimationEnd(animation: Animator) {
+                super.onAnimationEnd(animation)
+                // 动画结束后，设置为wrap_content确保布局正确
+                holder.subItemsLayout.layoutParams.height = ViewGroup.LayoutParams.WRAP_CONTENT
+                holder.subItemsLayout.requestLayout()
+            }
         })
+        return animatorSet
     }
 
-    private fun initDisappearAlphaAnimator(holder: ViewHolder) {
+    private fun createCollapseAnimation(holder: ViewHolder, targetHeight: Int): AnimatorSet {
         // 创建一个从startHeight到0的动画
-        val heightAnimator = ValueAnimator.ofInt(subMenuLayoutHeight, 0)
+        val heightAnimator = ValueAnimator.ofInt(targetHeight, 0)
         heightAnimator.addUpdateListener { animation ->
-            // 在动画过程中，更新subItemsLayout的高度
-            val currentHeight = animation.animatedValue as Int
-            val params = holder.subItemsLayout.layoutParams
-            params.height = currentHeight
-            holder.subItemsLayout.layoutParams = params
+            holder.subItemsLayout.layoutParams.height = animation.animatedValue as Int
+            holder.subItemsLayout.requestLayout()
         }
         // 创建一个alpha动画
         val alphaAnimator = ObjectAnimator.ofFloat(holder.subItemsLayout, "alpha", 1f, 0f)
 
         // 使用AnimatorSet同时执行这两个动画
-        disappearAlphaAnimator = AnimatorSet()
-        disappearAlphaAnimator.duration = 300
-        disappearAlphaAnimator.playTogether(heightAnimator, alphaAnimator)
-        disappearAlphaAnimator.addListener(object : AnimatorListenerAdapter() {
+        val animatorSet = AnimatorSet()
+        animatorSet.duration = 300
+        animatorSet.playTogether(heightAnimator, alphaAnimator)
+        animatorSet.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator) {
                 super.onAnimationEnd(animation)
                 holder.subItemsLayout.visibility = View.GONE
             }
         })
+        return animatorSet
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -100,23 +101,55 @@ class MenuAdapter(private val menuList: MutableList<Menu>) : RecyclerView.Adapte
             }
             holder.subItemsLayout.addView(view)
         }
-        // 默认隐藏子项布局
-        holder.subItemsLayout.visibility = View.GONE
+
+        // 根据是否有子项显示/隐藏 chevron 图标
+        if (menu.mSubItems.isNullOrEmpty()) {
+            holder.chevronIcon.visibility = View.GONE
+            holder.subItemsLayout.visibility = View.GONE
+        } else {
+            holder.chevronIcon.visibility = View.VISIBLE
+            holder.chevronIcon.rotation = 0f
+            // 默认隐藏子项布局
+            holder.subItemsLayout.visibility = View.GONE
+            holder.subItemsLayout.layoutParams.height = 0
+            holder.subItemsLayout.layoutParams = holder.subItemsLayout.layoutParams
+        }
 
         // 添加点击事件
         holder.itemView.setOnClickListener { v: View? ->
             run {
-                initAppearAlphaAnimator(holder)
-                initDisappearAlphaAnimator(holder)
                 if (!menu.mSubItems.isNullOrEmpty()) {
                     if (holder.subItemsLayout.visibility == View.GONE) {
-                        // 如果子项布局是隐藏的，那么展开它
-                        // 开始动画
-                        appearAlphaAnimator.start()
+                        // 展开前先测量目标高度
+                        holder.subItemsLayout.visibility = View.VISIBLE
+                        holder.subItemsLayout.measure(
+                            View.MeasureSpec.makeMeasureSpec(holder.itemView.measuredWidth, View.MeasureSpec.AT_MOST),
+                            View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED)
+                        )
+                        val targetHeight = holder.subItemsLayout.measuredHeight
+                        // 先设置为0，再开始动画
+                        holder.subItemsLayout.layoutParams.height = 0
+                        holder.subItemsLayout.requestLayout()
+
+                        val expandAnimator = createExpandAnimation(holder, targetHeight)
+                        expandAnimator.start()
+
+                        // 图标旋转180度向上
+                        ObjectAnimator.ofFloat(holder.chevronIcon, "rotation", 0f, 180f).apply {
+                            duration = 300
+                            start()
+                        }
                     } else {
-                        // 如果子项布局是可见的，那么折叠它
-                        // 开始动画
-                        disappearAlphaAnimator.start()
+                        // 收起前先测量当前高度
+                        val targetHeight = holder.subItemsLayout.measuredHeight
+                        val collapseAnimator = createCollapseAnimation(holder, targetHeight)
+                        collapseAnimator.start()
+
+                        // 图标旋转180度向下
+                        ObjectAnimator.ofFloat(holder.chevronIcon, "rotation", 180f, 0f).apply {
+                            duration = 300
+                            start()
+                        }
                     }
                 }
                 menu.mMenuClickListener?.invoke(v)
@@ -134,11 +167,13 @@ class MenuAdapter(private val menuList: MutableList<Menu>) : RecyclerView.Adapte
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val menuTitle: TextView
         val menuIcon: ImageView
+        val chevronIcon: ImageView
         val subItemsLayout: LinearLayout
 
         init {
             menuTitle = itemView.findViewById<TextView>(R.id.menu_title)
             menuIcon = itemView.findViewById<ImageView>(R.id.menu_icon)
+            chevronIcon = itemView.findViewById<ImageView>(R.id.chevron_icon)
             subItemsLayout = itemView.findViewById<LinearLayout>(R.id.sub_items_layout)
         }
     }

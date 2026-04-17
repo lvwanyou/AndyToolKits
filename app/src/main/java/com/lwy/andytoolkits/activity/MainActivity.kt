@@ -81,32 +81,31 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initMenuList(): MutableList<Menu> {
-        // 添加更多的菜单项...
+    private fun initMenuList(): MutableList<Menu> { // 添加更多的菜单项...
         val menuList: MutableList<Menu> = ArrayList()
         menuList.add(Menu("Opengl 三角形示例", R.drawable.ic_launcher_background, {
             startActivity(Intent(this, OpenGLES20Activity::class.java))
         }))
-        menuList.add(Menu("编解码测试", R.drawable.ic_launcher_background, {
-            startActivity(Intent(this, CodecTestActivity::class.java))
-        }))
         menuList.add(Menu("刻度测试", R.drawable.ic_launcher_background, {
             startActivity(Intent(this, RulerViewTestActivity::class.java))
         }))
-        menuList.add(Menu("图片2D变换测试", R.drawable.ic_launcher_background, {
-            startActivity(Intent(this, ImgTransformTestActivity::class.java))
-        }))
-        menuList.add(Menu("创意制作合集", R.drawable.ic_launcher_background, {}, hashMapOf(Pair("Lut图片") { _: View? ->
-            startActivity(Intent(this, CreativeCollectionActivity::class.java))
-        })))
+
+        menuList.add(
+            Menu(
+                "创意制作合集", R.drawable.ic_launcher_background, {}, hashMapOf(Pair("Lut图片") { _: View? ->
+                startActivity(Intent(this, CreativeCollectionActivity::class.java))
+            }, Pair("图片2D变换测试") { _: View? ->
+                startActivity(Intent(this, ImgTransformTestActivity::class.java))
+            }, Pair("获取图片主色测试") { _: View? ->
+                startActivity(Intent(this, BitmapMainColorActivity::class.java))
+            }, Pair("图片旋转缩放手势操作") { _: View? ->
+                startActivity(Intent(this, ZoomRotateImageTestActivity::class.java))
+            })
+            )
+        )
+
         menuList.add(Menu("mediaPlayer 测试", R.drawable.ic_launcher_background, {
             startActivity(Intent(this, VideoViewActivity::class.java))
-        }))
-        menuList.add(Menu("获取图片主色测试", R.drawable.ic_launcher_background, {
-            startActivity(Intent(this, BitmapMainColorActivity::class.java))
-        }))
-        menuList.add(Menu("图片旋转缩放手势操作", R.drawable.ic_launcher_background, {
-            startActivity(Intent(this, ZoomRotateImageTestActivity::class.java))
         }))
 
         menuList.add(Menu("图片融合示例", R.drawable.ic_launcher_background, null, hashMapOf(Pair("图片融合示例1") { _: View? ->
@@ -123,19 +122,23 @@ class MainActivity : AppCompatActivity() {
         menuList.add(Menu("audioTrack 适配 Android15 示例", R.drawable.ic_launcher_background, {
             startActivity(Intent(this, AudioTrackTestActivity::class.java))
         }))
-        menuList.add(Menu("TextureViewES30Activity 示例", R.drawable.ic_launcher_background, {
-            startActivity(Intent(this, TextureViewES30Activity::class.java))
-        }))
 
-        menuList.add(Menu("mediaCodec 解码示例", R.drawable.ic_launcher_background, null, hashMapOf(Pair("mediaCodec surfaceView 解码示例") { _: View? ->
-            startActivity(Intent(this, MediaCodecSurfaceViewActivity::class.java))
-        }, Pair("mediaCodec GLSurfaceView 解码示例") { _: View? ->
-            startActivity(Intent(this, MediaCodecGLSurfaceViewActivity::class.java))
-        }, Pair("mediaCodec GLSurfaceView photo 解码示例") { _: View? ->
-            startActivity(Intent(this, MediaCodecGLSurfaceViewWithPhotoActivity::class.java))
-        }, Pair("mediaCodec GLSurfaceView2 解码示例") { _: View? ->
-            startActivity(Intent(this, MediaCodecGLSurfaceView2Activity::class.java))
-        })))
+        menuList.add(
+            Menu(
+                "mediaCodec 解码示例", R.drawable.ic_launcher_background, null, hashMapOf(Pair("编解码测试") { _: View? ->
+                startActivity(Intent(this, CodecTestActivity::class.java))
+            }, Pair("mediaCodec surfaceView 解码示例") { _: View? ->
+                startActivity(Intent(this, MediaCodecSurfaceViewActivity::class.java))
+            }, Pair("mediaCodec GLSurfaceView 解码示例") { _: View? ->
+                startActivity(Intent(this, MediaCodecGLSurfaceViewActivity::class.java))
+            }, Pair("mediaCodec GLSurfaceView photo 解码示例") { _: View? ->
+                startActivity(Intent(this, MediaCodecGLSurfaceViewWithPhotoActivity::class.java))
+            }, Pair("mediaCodec GLSurfaceView2 解码示例") { _: View? ->
+                startActivity(Intent(this, MediaCodecGLSurfaceView2Activity::class.java))
+            }, Pair("TextureViewES30Activity 示例") { _: View? ->
+                startActivity(Intent(this, TextureViewES30Activity::class.java))
+            }))
+        )
 
         return menuList
     }
