@@ -83,16 +83,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun initMenuList(): MutableList<Menu> { // 添加更多的菜单项...
         val menuList: MutableList<Menu> = ArrayList()
-        menuList.add(Menu("Opengl 三角形示例", R.drawable.ic_launcher_background, {
+        menuList.add(Menu("Opengl 三角形示例", R.drawable.icon_arrow_triangle_right_fill_ltr, {
             startActivity(Intent(this, OpenGLES20Activity::class.java))
         }))
-        menuList.add(Menu("刻度测试", R.drawable.ic_launcher_background, {
+        menuList.add(Menu("刻度测试", R.drawable.icon_3_lines_horizontal_2, {
             startActivity(Intent(this, RulerViewTestActivity::class.java))
         }))
 
         menuList.add(
             Menu(
-                "创意制作合集", R.drawable.ic_launcher_background, {}, hashMapOf(Pair("Lut图片") { _: View? ->
+                "创意制作合集", R.drawable.icon_pen_star_fill, {}, hashMapOf(Pair("Lut图片") { _: View? ->
                 startActivity(Intent(this, CreativeCollectionActivity::class.java))
             }, Pair("图片2D变换测试") { _: View? ->
                 startActivity(Intent(this, ImgTransformTestActivity::class.java))
@@ -104,11 +104,11 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        menuList.add(Menu("mediaPlayer 测试", R.drawable.ic_launcher_background, {
+        menuList.add(Menu("mediaPlayer 测试", R.drawable.icon_video, {
             startActivity(Intent(this, VideoViewActivity::class.java))
         }))
 
-        menuList.add(Menu("图片融合示例", R.drawable.ic_launcher_background, null, hashMapOf(Pair("图片融合示例1") { _: View? ->
+        menuList.add(Menu("图片融合示例", R.drawable.icon_a_rectangle_on_rectangle, null, hashMapOf(Pair("图片融合示例1") { _: View? ->
             startActivity(Intent(this, ImageFusionTestActivity::class.java))
         }, Pair("图片融合示例2") { _: View? ->
             startActivity(Intent(this, ImageFusionTest2Activity::class.java))
@@ -116,16 +116,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ImageFusionTest3Activity::class.java))
         })))
 
-        menuList.add(Menu("liveData 示例", R.drawable.ic_launcher_background, {
+        menuList.add(Menu("liveData 示例", R.drawable.icon_live_entrance, {
             startActivity(Intent(this, LiveDataTestActivity::class.java))
         }))
-        menuList.add(Menu("audioTrack 适配 Android15 示例", R.drawable.ic_launcher_background, {
+        menuList.add(Menu("audioTrack 适配 Android15 示例", R.drawable.icon_2pt_music_note, {
             startActivity(Intent(this, AudioTrackTestActivity::class.java))
         }))
 
         menuList.add(
             Menu(
-                "mediaCodec 解码示例", R.drawable.ic_launcher_background, null, hashMapOf(Pair("编解码测试") { _: View? ->
+                "mediaCodec 解码示例", R.drawable.icon_gear_fill, null, hashMapOf(Pair("编解码测试") { _: View? ->
                 startActivity(Intent(this, CodecTestActivity::class.java))
             }, Pair("mediaCodec surfaceView 解码示例") { _: View? ->
                 startActivity(Intent(this, MediaCodecSurfaceViewActivity::class.java))
